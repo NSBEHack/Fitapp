@@ -99,8 +99,6 @@ public class FitnessMath {
 	}
 	*/
 	//Calc calories to burn to lose weight by BMR - calories 
-	//Activity selected, measure of intensity from activity method factors in, calories/min = .0175 * METS(Table) * weight. 
-	//Measure resting metabolic rate first (sitting) then exercise and subtract sitting from excercise to determine how much is burned is fat 
 	public int calcCaloriesBurned(String activity){
 		int caloriedeficit = 0;
 		int mets = 1;
@@ -108,7 +106,8 @@ public class FitnessMath {
 		if(activity.equalsIgnoreCase("bicycling")){
 			//measure of speed inputed into logic statements determining level of intensity which would determine METS value
 		}
-		//other activities programmed into app
+		//other activities programmed into app that are available for tracking 
+		//will be checked below to determine METS 
 		
 		double activitycalorieburn = .0175 * mets * weight;
 		caloriedeficit = (int) (activitycalorieburn - sittingcalorieburn);
