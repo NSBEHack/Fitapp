@@ -1,9 +1,10 @@
-package fitapp;
+package LifestyleChange;
 
 public class PList {
+	
 	People dummy;
-	PLNode head = new PLNode(dummy,null);
-	PLNode previous = head;
+	PNode head = new PNode(dummy,null);
+	PNode previous = head;
 	
 	public PList()
 	{
@@ -29,7 +30,7 @@ public class PList {
 	public void insertAfter(People ppl)
 	{
 		previous = previous.next;
-		previous.next = new PLNode(ppl, previous.next);
+		previous.next = new PNode(ppl, previous.next);
 	}
-	
+
 }

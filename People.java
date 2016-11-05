@@ -2,16 +2,20 @@ package LifestyleChange;
 
 public class People {
 
-	private String name;
+	private String firstname;
+	private String lastname;
 	private	int age;
 	private float height;
 	private float weight;
 	private String username;
 	private String password;
 	
-	public People(String name, int age, float height, float weight, String username, String password)
+	private int points;
+	
+	public People(String firstname, String lastname, int age, float height, float weight, String username, String password)
 	{
-		this.name = name;
+		this.firstname = firstname;
+		this.lastname = lastname;
 		this.age = age;
 		this.height=height;
 		this.weight=weight;
@@ -41,8 +45,12 @@ public class People {
 	public void setPassword(String password)
 	{this.password=password;}
 	
-	public void setName(String name)
-	{this.name= name;}
+	public void setFirstName(String name)
+	{this.firstname= name;}
+	
+	public void setLastName(String name)
+	{this.lastname= name;}
+	
 	//getters
 	public int getAge()
 	{return age;}
@@ -59,6 +67,20 @@ public class People {
 	public String getPassword()
 	{return password;}
 	
-	public String getName()
-	{return name;}
+	public String getFirstName()
+	{return firstname;}
+	
+	public String getLastName()
+	{return lastname;}
+	
+	public void pointGain()
+	{
+		
+	}
+	
+	public String toStrings()
+	{
+		String text = String.format("%s,%s, %s, %d, %.2f,%s",firstname,lastname,age,height,weight,points);
+		return text;
+	}
 }
