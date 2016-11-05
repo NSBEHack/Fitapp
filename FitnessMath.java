@@ -14,7 +14,7 @@ public class FitnessMath {
 	public FitnessMath(String gender, int calories, double weight, int heightFeet, int heightInches, int age){
 		this.gender = gender; 
 		this.calories = calories; 
-		this.weight = weight * .45; //converted to kg for equations
+		this.weight = weight * 2.2; //converted to kg for equations
 		heightInches = (heightFeet * 12) + heightInches; 
 		this.height = heightInches * .025; // converted to meters
 		this.age = age; 
@@ -88,6 +88,7 @@ public class FitnessMath {
 		}
 	}
 	/*
+	 * Check the x, y, and z coordinate changes overtime and rate of change to determine activity and measure intensity of activity 
 	public String checkActivity(double distance, double speed){
 		double frequency = 0.0; 
 		frequency = speed/distance;
@@ -97,5 +98,20 @@ public class FitnessMath {
 		return "No activity."; 
 	}
 	*/
-	
+	//Calc calories to burn to lose weight by BMR - calories 
+	//Activity selected, measure of intensity from activity method factors in, calories/min = .0175 * METS(Table) * weight. 
+	//Measure resting metabolic rate first (sitting) then exercise and subtract sitting from excercise to determine how much is burned is fat 
+	public int calcCaloriesBurned(String activity){
+		int caloriedeficit = 0;
+		int mets = 1;
+		double sittingcalorieburn = .0175 * mets * weight; 
+		if(activity.equalsIgnoreCase("bicycling")){
+			//measure of speed inputed into logic statements determining level of intensity which would determine METS value
+		}
+		//other activities programmed into app
+		
+		double activitycalorieburn = .0175 * mets * weight;
+		caloriedeficit = (int) (activitycalorieburn - sittingcalorieburn);
+		return caloriedeficit; 
+	}
 }
